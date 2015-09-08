@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner (System.in);
+        while(sc.hasNext())
+        {
+            int n=sc.nextInt();
+            if(n<20)
+            {
+                System.out.println("Lumberjacks:");
+                for(int c=1; c<=n; c++)
+                {
+                    int short2long=0;
+                    int long2short=0;
+                    int[] arr=new int[10];
+                    for(int i=0; i<10; i++){
+                        int b =sc.nextInt();
+                        if(b<100)
+                            arr[i]=b;
+                    }
+                    for(int i=0; i<9; i++)
+                    {
+                        if(arr[i]<arr[i+1])
+                            short2long++;
+                        if(arr[i]>arr[i+1])
+                            long2short++;
+                    }
+                    if(short2long==9)
+                        System.out.println("Ordered");
+                    else if(long2short==9)
+                        System.out.println("Ordered");
+                    else
+                        System.out.println("Unordered");
+                }
+            }
+        }
+    }
+}
