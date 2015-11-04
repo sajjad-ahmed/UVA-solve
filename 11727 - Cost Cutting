@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext())
+        {
+            int t=sc.nextInt();
+            if(t<20)
+            {
+                for(int i=1; i<=t; i++)
+                {
+                    int a=sc.nextInt();
+                    int b=sc.nextInt();
+                    int c=sc.nextInt();
+                    if(((a>=1000)&&(a<=10000)) && ((c>=1000)&&(c<=10000)) && ((b>=1000)&&(b<=10000)))
+                    {
+                        if((a>b && a<c) || (a>c && a<b))
+                            System.out.printf("Case %d: %d\n",i,a);
+                        else if((b>a && b<c) || (b>c && b<a))
+                            System.out.printf("Case %d: %d\n",i,b);
+                        else if((c>b && c<a) || (c>a && c<b))
+                            System.out.printf("Case %d: %d\n",i,a);
+                    }
+                }
+            }
+        }
+    }
+}
