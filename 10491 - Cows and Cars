@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc= new Scanner(System.in);
+        while(sc.hasNext())
+        {
+            int ncow=sc.nextInt();
+            int ncar=sc.nextInt();
+            int ns=sc.nextInt();
+            if( (ncow>=1 && ncow<=10000) && (ncar>=1 && ncar<=10000) && (ns>=0 && ns<ncow))
+            {
+                int t =ncow+ncar;
+                double ans= ((ncar*(t-1))/(double)(t*(t-ns-1)));
+                System.out.printf("%.5f\n",ans);
+            }
+        }
+    }
+}
