@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+
+public class  Main
+{
+    public static void main(String[] args) {
+        Scanner sc =new Scanner (System.in);
+        while(sc.hasNext())
+        {
+            int c=sc.nextInt();
+            for(int x=1; x<=c; x++)
+            {
+                int n=sc.nextInt();
+                int avg=0;
+                int sum=0;
+                int count=0;
+                float ans=0;
+                int[] a=new int[n];
+                if(n>=1 && n<=1000)
+                {
+                    for(int y=0; y<a.length; y++)
+                    {
+                        a[y]=sc.nextInt();
+                        sum+=a[y];
+                    }
+                }
+                avg=sum/n;
+                for(int y=0; y<a.length; y++)
+                {
+                    if(a[y]>avg)
+                    {
+                        count++;
+                    }
+                }
+                ans=((float)count/(float)n)*100;
+                System.out.printf("%.3f%%%n", ans);
+            }
+        }
+    }
+}
