@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext())
+        {
+            int t=sc.nextInt();
+            if(t<100)
+            {
+                for(int i=1; i<=t; i++)
+                {
+                    int trm1=sc.nextInt();
+                    int trm2=sc.nextInt();
+                    int fnl=sc.nextInt();
+                    int att=sc.nextInt();
+                    int ct1=sc.nextInt();
+                    int ct2=sc.nextInt();
+                    int ct3=sc.nextInt();
+                    int max1= Math.max(Math.max(Math.max(ct1,ct2),Math.max(ct2,ct3)),Math.max(ct3,ct1));
+                    int max2=0;
+                    if(max1==ct1)
+                        max2=Math.max(ct2,ct3);
+                    else if(max1==ct2)
+                        max2=Math.max(ct1,ct3);
+                    else if(max1==ct3)
+                        max2=Math.max(ct2,ct1);
+                    
+                    int cta=(max1+max2)/2;
+                    
+                    int p=trm1+trm2+fnl+att+cta;
+                    if(p>=90)
+                        System.out.printf("Case %d: A\n",i);
+                    else if(p>=80)
+                        System.out.printf("Case %d: B\n",i);
+                    else if(p>=70)
+                        System.out.printf("Case %d: C\n",i);
+                    else if(p>=60)
+                        System.out.printf("Case %d: D\n",i);
+                    else 
+                        System.out.printf("Case %d: F\n",i);
+                }
+            }
+        }
+    }
+}
